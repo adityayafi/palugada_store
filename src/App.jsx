@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path='/' Component={Layout}>
             <Route index Component={Home}/>
-            <Route path='/detail_produk/:id' Component={DetailProduk}/>
+            <Route path='/detail_produk/:page/:id' Component={DetailProduk}/>
             <Route path='/login' Component={Login}/>
             <Route path='/register' Component={Register}/>
           </Route>

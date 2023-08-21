@@ -1,13 +1,13 @@
 import { Button, Card, Col } from "antd"
 import { useNavigate } from "react-router-dom"
 
-const AppCard = ({product}) => {
-    console.log(product)
+const AppCard = ({product, page}) => {
+    // console.log(page)
 
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/detail_produk/${product.id}`)
+        navigate(`/detail_produk/${page}/${product.id}`)
     }
     return(
         <Col span={6} className="gutter-row mb-2" onClick={handleClick}>

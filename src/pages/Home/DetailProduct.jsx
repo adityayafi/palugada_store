@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 const DetailProduk = () => {
 
     const {id} = useParams();
+    const {page} = useParams();
     const newId = parseInt(id);
 
     const [allData, setAllData] = useState([])
@@ -21,7 +22,7 @@ const DetailProduk = () => {
 
     const fetchDetailData = async () => {
         try {
-            const resp = await axios.get('https://hijja.sistemtoko.com/public/imedia/product?page=2&sorting=Lates&categories=all&search_name=none')
+            const resp = await axios.get(`https://hijja.sistemtoko.com/public/imedia/product?page=${page}&sorting=Lates&categories=all&search_name=none`)
             const res = resp.data.aaData
             res.filter((item) => {
                 if (item.id === newId){
